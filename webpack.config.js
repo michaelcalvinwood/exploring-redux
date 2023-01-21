@@ -4,7 +4,8 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "app.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    publicPath: '/dist/'
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
