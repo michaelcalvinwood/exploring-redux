@@ -15,6 +15,7 @@ function reducer(state, action) {
 
                 }
             ]
-            break;
+        case 'bugRemoved':
+            return state.filter(bug => bug.id !== action.payload.id);
     }
 }
