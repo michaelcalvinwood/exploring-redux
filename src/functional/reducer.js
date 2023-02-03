@@ -3,7 +3,9 @@ let lastId =  0;
 
 // simple reducer as an example
 
-function reducer(state, action) {
+export default function reducer(state = [], action) {
+    // redux first calls the reducer with state === null // state = [] above initializes the state
+
     switch(action.type) {
         case 'bugAdded':
             return [
@@ -17,5 +19,8 @@ function reducer(state, action) {
             ]
         case 'bugRemoved':
             return state.filter(bug => bug.id !== action.payload.id);
+        
+        default:
+            return state;
     }
 }
