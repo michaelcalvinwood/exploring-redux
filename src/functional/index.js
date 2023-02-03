@@ -1,5 +1,9 @@
 import store from "./store";
 
+const unsubscribe = store.subscribe(() => {
+    console.log('current state', store.getState());
+})
+
 store.dispatch({
     type: "bugAdded",
     payload: {
@@ -7,3 +11,10 @@ store.dispatch({
     }
 });
 
+store.dispatch ({
+    type: "bugRemoved",
+    payload: {
+        id: 1
+    }
+
+});
